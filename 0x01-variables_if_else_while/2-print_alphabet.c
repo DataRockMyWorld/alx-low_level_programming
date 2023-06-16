@@ -16,7 +16,7 @@ for (i = 'A'; i <= 'Z'; i++)
 {
 l = i + 32;
 putchar(l);
-putchar('\n');
 }
+putchar('\n');
 return (0);
 }
