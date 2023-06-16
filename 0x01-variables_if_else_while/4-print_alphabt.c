@@ -11,8 +11,12 @@ int main(void)
 {
 int i;
 int l;
-for (i = 'A'; i <= 'Z' && i != 'E' && i != 'Q'; i++)
+for (i = 'A'; i <= 'Z'; i++)
 {
+if (i == 'E' || i == 'Q')
+{
+continue;
+}
 l = i + 32;
 putchar(l);
 }
