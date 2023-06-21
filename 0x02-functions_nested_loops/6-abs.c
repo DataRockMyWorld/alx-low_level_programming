@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * _abs - checks for sign and returns 1 when true
+ * _abs - Makes a number absolute
  * @n: Input type required
  *
  * Return: On success 1.
