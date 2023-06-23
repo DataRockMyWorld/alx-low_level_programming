@@ -1,0 +1,34 @@
+#include <stdio.h>
+/**
+ * main - first 50 fibonacci numbers
+ * @void: Fxn takes an input as a parameter
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+
+int main(void)
+{
+	unsigned long fib_1 = 0, fib_2 = 1, sum;
+	float total_sum;
+
+	while (1)
+	{
+		sum = fib_1 + fib_2;
+
+		if (sum > 4000000)
+		{
+			break;
+		}
+		if ((sum % 2) == 0)
+		{
+			total_sum += sum;
+		}
+
+		fib_1 = fib_2;
+		fib_2 = sum;
+	}
+	printf("%.0f\n", total_sum);
+
+	return (0);
+}
