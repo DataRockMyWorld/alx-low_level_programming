@@ -1,0 +1,28 @@
+#include "main.h"
+
+/**
+ * print_number - Print a line
+ * @n: The character to print
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+void print_number(int n)
+{
+	unsigned int ui;
+
+	if (n < 0)
+	{
+		ui = -n;
+		_putchar('-');
+	}
+	else
+	{
+		ui = n;
+	}
+	if (ui / 10)
+	{
+		print_number(ui / 10);
+	}
+	_putchar((ui % 10) + '0');
+}
