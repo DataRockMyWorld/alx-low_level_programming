@@ -9,17 +9,16 @@
  */
 void print_rev(char *s)
 {
-	const char *p = s;
-	int i;
+	int i, j, count = 0;
 
-	for (i = 0; p[i] != '\0'; i++)
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		p++;
+		count++;
 	}
 
-	while (p >= s)
+	for (j = count - 1; j >= 0; j--)
 	{
-		_putchar(*p);
+		_putchar(s[j]);
 	}
 	_putchar('\n');
 }
