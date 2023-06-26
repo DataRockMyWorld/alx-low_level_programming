@@ -1,13 +1,17 @@
-#include <unistd.h>
+#include "main.h"
 
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- *
+ * swap_int - writes the character c to stdout
+ * @a: The character to print
+ * @b: The character to print
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
-int _putchar(char c)
+void swap_int(int *a, int *b)
 {
-	return (write(1, &c, 1));
+	int temp;
+
+	temp = *b;
+	*b = *a;
+	* a = temp;
 }
