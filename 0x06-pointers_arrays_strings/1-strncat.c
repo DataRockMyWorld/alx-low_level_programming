@@ -1,0 +1,34 @@
+#include "main.h"
+
+/**
+ * char *_strncat - writes the character c to stdout
+ * @dest: The character to print
+ * @src: The character to print
+ * @n: The character to print
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+char *_strncat(char *dest, char *src, int n)
+{
+	int i, j, count_1 = 0, count_2 = 0;
+	char **ptr_dest = &dest;
+
+	for (i = 0; src[i] != '\0'; i++)
+	{
+		count_1++;
+	}
+
+	for (j = 0; dest[i] != '\0'; j++)
+	{
+		count_2++;
+	}
+
+	count_1 = count_1 + 1;
+
+	for (n = 0; n <= count_1; n++)
+	{
+		dest[count_2 + n] = src[n];
+	}
+
+	return (*ptr_dest);
+}
