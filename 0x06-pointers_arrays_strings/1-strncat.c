@@ -10,32 +10,18 @@
  */
 char *_strncat(char *dest, char *src, int n)
 {
-	int i, j, k, count_1 = 0, count_2 = 0;
+	int i, j, len_dest = 0;
 
-	for (i = 0; src[i] != '\0'; i++)
+	for (i = 0; dest[i] != '\0'; i++)
 	{
-		count_1++;
+		len_dest++;
 	}
 
-	for (j = 0; dest[j] != '\0'; j++)
+	for (j = 0; j < n && src[j] != '\0'; j++)
 	{
-		count_2++;
+		dest[len_dest] = src[j];
+		len_dest++;
 	}
-
-	if (n < count_1)
-	{
-		for (k = 0; k < n; k++)
-		{
-			dest[count_2 + k] = src[k];
-		}
-	}
-	else if (n >= count_1)
-	{
-		for (k = 0; k < n; k++)
-		{
-			dest[count_2 + k] = src[k];
-		}
-	}
-
+	dest[len_dest] = '\0';
 	return (dest);
 }
