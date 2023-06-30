@@ -1,33 +1,38 @@
 #include "main.h"
 
 /**
- * *cap_string - writes the character c to stdout
- * @c: The character to print
+ * cap_string - Capitalizes all words of a string.
+ * @c: The string to be capitalized.
  *
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * Return: A pointer to the changed string.
  */
 char *cap_string(char *c)
 {
-	int i;
+	int i = 0;
 
-	for (i = 0; c[i] != '\0'; i++)
+	while (c[i])
 	{
-	  if (c[i] == '\n' || c[i] == ' ' || c[i] == '\t' || c[i] == ',' || c[i] == ';'
-		|| c[i] == ',' || c[i] == '?' || c[i] == '!' || c[i] == '"'
-		|| c[i] == '{' || c[i] == '}' || c[i] == '(' || c[i] == ')' || c[i] == ' '
-		|| i == 0)
-		{
-		  if ((c[i + 1] >= 'a') && (c[i + 1] <= 'z'))
-			{
-				c[i + 1] = c[i + 1] - 32;
-			}
-		  else
-			{
-				c[i + 1] = c [i + 1];
-			}
-		}
+		while (!(c[i] >= 'a' && c[i] <= 'z'))
+			i++;
+
+		if (c[i - 1] == ' ' ||
+		    c[i - 1] == '\t' ||
+		    c[i - 1] == '\n' ||
+		    c[i - 1] == ',' ||
+		    c[i - 1] == ';' ||
+		    c[i - 1] == '.' ||
+		    c[i - 1] == '!' ||
+		    c[i - 1] == '?' ||
+		    c[i - 1] == '"' ||
+		    c[i - 1] == '(' ||
+		    c[i - 1] == ')' ||
+		    c[i - 1] == '{' ||
+		    c[i - 1] == '}' ||
+		    i == 0)
+			c[i] -= 32;
+
+		i++;
 	}
+
 	return (c);
 }
