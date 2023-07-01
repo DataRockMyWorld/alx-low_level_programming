@@ -1,0 +1,21 @@
+#include "main.h"
+
+/**
+ * print_number - writes the character c to stdout
+ * @n: The character to print
+ *
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+void print_number(int n)
+{
+	int i;
+	char *ls = "n";
+
+	for (i = 0; ls[i] != '\0'; i++)
+	{
+		_putchar(ls[i]);
+	}
+	_putchar('\0');
+}
