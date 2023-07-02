@@ -10,12 +10,19 @@
  */
 void print_number(int n)
 {
-	int i;
-	char *ls = "n";
+	unsigned int uni;
 
-	for (i = 0; ls[i] != '\0'; i++)
+	uni = n;
+
+	if (n < 0)
 	{
-		_putchar(ls[i]);
+		_putchar('-');
+		uni = -n;
 	}
-	_putchar('\0');
+
+	if (uni / 10 != 0)
+	{
+		print_number(uni / 10);
+	}
+	_putchar((uni % 10) + '0');
 }
