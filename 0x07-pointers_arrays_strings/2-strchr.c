@@ -2,7 +2,7 @@
 #include <stddef.h>
 
 /**
- * *_strchr - writes the character c to stdout
+ * *_strchr - writes a function that locates character in a string
  * @s: The character to print
  * @c: The character to print
  *
@@ -14,7 +14,7 @@ char *_strchr(char *s, char c)
 {
 	int i;
 
-	for (i = 0; s[i] != '\0'; i++)
+	for (i = 0; s[i] >= '\0'; i++)
 	{
 		if (s[i] == c)
 		{
