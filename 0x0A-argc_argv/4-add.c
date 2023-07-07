@@ -15,27 +15,27 @@ int main(int argc, char *argv[])
 
 	count = 0;
 
-	if (argc < 2)
+	if (argc == 1)
 	{
 		printf("0\n");
-		return (1);
 	}
-
-	for (i = 1; i < argc; i++)
+	else
 	{
-		s = atoi(argv[i]);
-		if (s > 0)
+		for (i = 1; i < argc; i++)
 		{
-			count = count + s;
+			s = atoi(argv[i]);
+			if (s > 0)
+			{
+				count = count + s;
+			}
+			else
+			{
+				printf("Error\n");
+				return (1);
+			}
 		}
-		else
-		{
-			printf("Error\n");
-			return (1);
-		}
+		printf("%d\n", count);
 	}
-
-	printf("%d\n", count);
 
 	return (0);
 }
