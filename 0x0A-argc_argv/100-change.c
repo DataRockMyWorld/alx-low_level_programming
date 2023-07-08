@@ -11,7 +11,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int n, quarters, dimes, nickels, pennies, two_cent, coins;
+	int n, quarters, dimes, nickels, pennies, two_cent, cents;
 
 	if (argc != 2)
 	{
@@ -43,9 +43,9 @@ int main(int argc, char *argv[])
 			pennies = n;
 			n = n - pennies;
 
-			coins = quarters + dimes + nickels + two_cent + pennies;
+			cents = quarters + dimes + nickels + two_cent + pennies;
 		}
-		printf("%d\n", coins);
+		printf("%d\n", cents);
 	}
 	return (0);
 }
