@@ -11,7 +11,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int i, count, s;
+	int i, j, k, count, s;
 
 	count = 0;
 
@@ -21,6 +21,17 @@ int main(int argc, char *argv[])
 	}
 	else
 	{
+		for (j = 1; j < argc; j++)
+		{
+			for (k = 0; argv[j][k] != '\0'; k++)
+			{
+				if (!isdigit(argv[j][k]))
+				{
+					printf("Error\n");
+					return (1);
+				}
+			}
+		}
 		for (i = 1; i < argc; i++)
 		{
 			s = atoi(argv[i]);
@@ -28,7 +39,7 @@ int main(int argc, char *argv[])
 			{
 				count = count + s;
 			}
-			else
+			else if (s <= 0 || !isdigit(s))
 			{
 				printf("Error\n");
 				return (1);
