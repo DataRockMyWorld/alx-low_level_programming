@@ -44,8 +44,8 @@ int main(int argc, char *argv[])
 			n = n - pennies;
 
 			cents = quarters + dimes + nickels + two_cent + pennies;
+			printf("%d\n", cents);
 		}
-		printf("%d\n", cents);
 	}
 	return (0);
 }
