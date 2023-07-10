@@ -13,6 +13,11 @@ char *_strdup(char *str)
 	char *duplicate;
 	int i, j, count = 1;
 
+	if (str == NULL)
+	{
+		return (NULL);
+	}
+
 	for (j = 0; str[j] != '\0'; j++)
 	{
 		count++;
@@ -21,10 +26,6 @@ char *_strdup(char *str)
 	duplicate = (char *)malloc(sizeof(char) * count);
 
 	if (duplicate == NULL)
-	{
-		return (NULL);
-	}
-	else if (str == NULL)
 	{
 		return (NULL);
 	}
