@@ -11,16 +11,20 @@
 char *_strdup(char *str)
 {
 	char *duplicate;
-	int i, j, count = 0;
+	int i, j, count = 1;
 
-	for (j = 0;str[j] != '\0'; j++)
+	for (j = 0; str[j] != '\0'; j++)
 	{
 		count++;
 	}
 
 	duplicate = (char *)malloc(sizeof(char) * count);
 
-	if (duplicate == NULL || str == NULL)
+	if (duplicate == NULL)
+	{
+		return (NULL);
+	}
+	else if (str == NULL)
 	{
 		return (NULL);
 	}
