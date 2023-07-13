@@ -41,10 +41,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		ptr[k] = s1[k];
 	}
-	for (l = 0; l < n && n < len_s2; l++)
+	for (l = 0; k < (len_s1 + n) && n < len_s2; l++)
 		ptr[k++] = s2[l];
 
-	for (l = 0; l < len_s2 && n >= len_s2; l++)
+	for (l = 0; k < (len_s2 + len_s1) && n >= len_s2; l++)
 		ptr[k++] = s2[l];
 	ptr[k] = '\0';
 	return (ptr);
