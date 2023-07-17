@@ -1,3 +1,11 @@
+/**
+ * struct my_struct - Short description
+ * @name: First member - name of dog
+ * @age: Second member - age of dog
+ * @owner: Third member - owner name
+ *
+ * Description: Longer description
+ */
 struct dog
 {
 	char *name;
