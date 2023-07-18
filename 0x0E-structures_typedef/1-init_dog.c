@@ -1,5 +1,6 @@
 #include <unistd.h>
 #include "dog.h"
+#include <stdlib.h>
 
 /**
  * init_dog - writes the character c to stdout
