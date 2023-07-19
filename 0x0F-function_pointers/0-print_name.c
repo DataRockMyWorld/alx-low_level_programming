@@ -1,0 +1,20 @@
+#include <unistd.h>
+#include "function_pointers.h"
+#include <stdlib.h>
+
+/**
+ * print_name - writes a name stdout
+ * @name: The character to print
+ * @f: name of dog
+ *
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+void print_name(char *name, void (*f)(char *))
+{
+	if (name == NULL || f == NULL)
+		exit(1);
+
+	(*f)(name);
+}
