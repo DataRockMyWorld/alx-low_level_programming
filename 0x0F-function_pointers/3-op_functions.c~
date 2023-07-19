@@ -1,0 +1,95 @@
+#include <unistd.h>
+#include "3-calc.h"
+#include <stdlib.h>
+
+int op_add(int a, int b);
+int op_sub(int a, int b);
+int op_mul(int a, int b);
+int op_div(int a, int b);
+int op_mod(int a, int b);
+
+/**
+ * op_add - writes a name stdout
+ * @a: The character to print
+ * @b: second integer
+ *
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+int op_add(int a, int b)
+{
+	int c;
+
+	c  = a + b;
+	return (c);
+}
+
+/**
+ * op_sub - writes a name stdout
+ * @a: The character to print
+ * @b: second integer
+ * Return: On success 1
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+int op_sub(int a, int b)
+{
+	int c;
+
+	c  = a - b;
+	return (c);
+}
+
+/**
+ * op_mul - writes a name stdout
+ * @a: The character to print
+ * @b: second integer
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+int op_mul(int a, int b)
+{
+	int c;
+
+	c = a * b;
+	return (c);
+}
+
+
+/**
+ * op_div - Divides two integers
+ * @a: The character to print
+ * @b: second integer
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+
+int op_div(int a, int b)
+{
+	int c;
+
+	if (b == 0)
+	{
+		printf("Error");
+		exit(99);
+	}
+
+	c = a / b;
+	return (c);
+}
+
+/**
+ * op_mod - Makes possible to evaluate from 1 to n
+ * @a: same number as n
+ * @b: number that iterates from 1 to n
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+int op_mod(int a, int b)
+{
+	int c;
+
+	c = a % b;
+	return (c);
+}
