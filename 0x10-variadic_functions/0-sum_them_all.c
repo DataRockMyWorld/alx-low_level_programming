@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include "variadic_functions.h"
+#include <stdarg.h>
+
+/**
+ * sum_them_all - check the code
+ * @n: Integer input
+ *
+ * Return: Always 0.
+ */
+int sum_them_all(const unsigned int n, ...)
+{
+	unsigned int i, x, sum;
+
+	va_list num_args;
+
+	va_start(num_args, n);
+	if (n == 0)
+		return (0);
+
+	sum = 0;
+	for (i = 0; i < n; i++)
+	{
+		x = va_arg(num_args, int);
+		sum = sum + x;
+	}
+	return (sum);
+}
