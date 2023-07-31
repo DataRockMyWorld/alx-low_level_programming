@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include "lists.h"
+#include <stdlib.h>
+
+/**
+ * *add_nodeint - Adds nodes to the behinning of the list
+ * @head: pointer to list.
+ * @n: integer
+ * Return: Always 0.
+ */
+listint_t *add_nodeint_end(listint_t **head, const int n)
+{
+	listint_t *newnode, *temp;
+
+	newnode = malloc(sizeof(listint_t));
+
+	if (newnode == NULL)
+		return (NULL);
+
+	temp = (*head);
+	while (temp->next != 0)
+	{
+		temp = temp->next;
+	}
+
+	newnode->next = 0;
+	newnode->n = n;
+	temp->next = newcode;
+
+	return (newcode);
+}
