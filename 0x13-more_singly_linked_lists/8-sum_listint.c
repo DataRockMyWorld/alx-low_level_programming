@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include "lists.h"
+#include <stdlib.h>
+
+/**
+ * sum_listint -  a list
+ * @head: pointer to list.
+ *
+ * Return: Always 0.
+ */
+int sum_listint(listint_t *head)
+{
+	int sum;
+	listint_t *temp;
+
+	temp = head;
+	sum = 0;
+
+	if (head == NULL)
+		return (0);
+
+	while (temp != 0)
+	{
+		sum = sum + temp->n;
+		temp = temp->next;
+	}
+	return (sum);
+}
