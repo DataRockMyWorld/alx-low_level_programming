@@ -1,0 +1,28 @@
+#include "lists.h"
+#include <stdlib.h>
+/**
+ * *reverse_listint - reverses a linked list.
+ * @head: pointer to the first element in the list
+ *
+ *
+ * Return: 1 (Success), or -1 (Fail)
+ */
+listint_t *reverse_listint(listint_t **head)
+{
+	listint_t *prev, *step;
+
+	prev = NULL;
+	step = NULL;
+
+	while (head != NULL)
+	{
+		step = (*head)->next;
+		(*head)->next = prev;
+		prev = (*head);
+		(*head) = step;
+	}
+
+	(*head) = prev;
+
+	return (*head);
+}
