@@ -1,0 +1,26 @@
+#include "lists.h"
+#include <stdlib.h>
+#include <stddef.h>
+/**
+ * free_listint_safe - deletes a list..
+ * @h: pointer to the first element in the list
+ *
+ *
+ * Return: 1 (Success), or -1 (Fail)
+ */
+size_t free_listint_safe(listint_t **h)
+{
+	listint_t *temp;
+	size_t size;
+
+	size = 0;
+	while (temp != NULL)
+	{
+		temp = (*h)->next;
+		free(*h);
+		size++;
+		(*h) = temp;
+	}
+	(*h) = NULL;
+	return (size);
+}
