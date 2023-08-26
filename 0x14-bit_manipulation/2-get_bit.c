@@ -3,35 +3,22 @@
 #include <stdlib.h>
 #include <string.h>
 
+
 /**
- * get_bit - converts binary to unsigned int
- * @n: The character to print
- * @index: index of array
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * get_bit - returns the value of a bit at an index in a decimal number
+ * @n: number to search
+ * @index: index of the bit
+ *
+ * Return: value of the bit
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned int bin, i;
-	unsigned int *array = malloc(sizeof(unsigned int) * 64);
+	int bit_value;
 
-	if (array == NULL)
+	if (index > 63)
 		return (-1);
 
-	i = 0;
-	while (n != 0)
-	{
-		bin = n % 2;
-		n = n / 2;
-		array[i] = bin;
-		i++;
-	}
+	bit_value = (n >> index) & 1;
 
-	if (index >= i)
-	{
-		free(array);
-		return (-1);
-	}
-
-	return (array[index]);
+	return (bit_value);
 }
