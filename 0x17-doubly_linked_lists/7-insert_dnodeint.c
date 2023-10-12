@@ -1,4 +1,24 @@
 #include "lists.h"
+/**
+ * dlistint_len - check the code
+ * @h: head of node
+ *
+ * Return: Number of elements in linked list.
+ */
+size_t dlistint_len(const dlistint_t *h)
+{
+	int count = 0;
+
+	if (h == NULL)
+		return (0);
+
+	while (h)
+	{
+		count++;
+		h = h->next;
+	}
+	return (count);
+}
 
 /**
  * insert_dnodeint_at_index - check the code
@@ -15,6 +35,10 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	dlistint_t *new = NULL;
 	unsigned int i = 0;
 
+	if (idx > dlistint_len(*h))
+	{
+		return (NULL);
+	}
 	new = malloc(sizeof(dlistint_t));
 	if (new == NULL)
 		return (NULL);
